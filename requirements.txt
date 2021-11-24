@@ -1,0 +1,13 @@
+# spaCy
+spacy==3.1.0
+spacy-transformers==1.0.6
+cupy-cuda111==9.5.0
+
+# FastAPI
+pydantic>=1.0.0,<2.0.0
+fastapi>=0.61.1,<0.62.0
+aiofiles
+uvicorn>=0.11.6,<0.12.0
+
+# FastAPI Health
+fastapi-health==0.4.0
