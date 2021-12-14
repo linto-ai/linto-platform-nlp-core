@@ -1,5 +1,9 @@
-FROM anibali/pytorch:1.8.1-cuda11.1-ubuntu20.04
+FROM pytorch/pytorch:1.8.1-cuda10.2-cudnn7-runtime
 LABEL maintainer="gshang@linagora.com"
+
+RUN apt-get update &&\
+    apt-get install -y gcc &&\
+    apt-get clean
 
 WORKDIR /app
 
@@ -11,5 +15,5 @@ COPY ./components /app/components
 
 HEALTHCHECK --interval=15s CMD curl -fs http://0.0.0.0/health || exit 1
 
-ENTRYPOINT ["/home/user/miniconda/bin/gunicorn", "scripts.main:app", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:80", "--access-logfile", "-", "--error-logfile", "-"]
+ENTRYPOINT ["/opt/conda/bin/gunicorn", "scripts.main:app", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:80", "--access-logfile", "-", "--error-logfile", "-"]
 CMD ["--workers", "1"]

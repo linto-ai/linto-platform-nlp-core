@@ -1,5 +1,5 @@
 # spaCy
-spacy[cuda111,transformers]==3.2.0
+spacy[cuda102,transformers]==3.2.0
 
 # FastAPI
 fastapi==0.70.0

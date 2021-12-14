@@ -7,7 +7,7 @@ linto-platform-nlp-core is backed by [spaCy](https://spacy.io/) v3.0+ featuring 
 
 LinTo's NLP services adopt the basic design concept of spaCy: [component and pipeline](https://spacy.io/usage/processing-pipelines), components are decoupled from the service and can be easily re-used in other projects, components are organised into pipelines for realising specific NLP tasks. 
 
-This is a void service served by [FastAPI](https://fastapi.tiangolo.com/)
+This is a void service served by [FastAPI](https://fastapi.tiangolo.com/).
 
 ## Usage
 
