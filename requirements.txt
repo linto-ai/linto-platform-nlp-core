@@ -6,6 +6,9 @@ flask-swagger-ui>=3.36.0
 # Gunicorn
 gunicorn>=20.1.0
 
+# Gevent
+gevent==22.10.2
+
 # Celery
 celery[redis,auth,msgpack]>=4.4.7
 
