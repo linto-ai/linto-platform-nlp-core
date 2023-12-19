@@ -7,7 +7,7 @@ on:
       - README.md
       - .github/workflows/dockerhub-description.yml
 jobs:
-  dockerHubDescriptionCore:
+  dockerHubDescription:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -18,60 +18,3 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: lintoai/linto-platform-nlp-core
         readme-filepath: ./README.md
-  dockerHubDescriptionExtSumm:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: lintoai/linto-platform-nlp-extractive-summarization
-        readme-filepath: ./extractive-summarization/README.md
-  dockerHubDescriptionKPE:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: lintoai/linto-platform-nlp-keyphrase-extraction
-        readme-filepath: ./keyphrase-extraction/README.md
-  dockerHubDescriptionKWE:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: lintoai/linto-platform-nlp-keyword-extraction
-        readme-filepath: ./keyword-extraction/README.md
-  dockerHubDescriptionNER:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: lintoai/linto-platform-nlp-named-entity-recognition
-        readme-filepath: ./named-entity-recognition/README.md
-  dockerHubDescriptionTopic:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: lintoai/linto-platform-nlp-topic-modeling
-        readme-filepath: ./topic-modeling/README.md
-
-      
